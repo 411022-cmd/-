@@ -1,3 +1,34 @@
+# 背單字卡（純前端）
+
+簡單的單字卡 web app（純 HTML/CSS/JS，不使用框架），功能：
+
+- 中央卡片點擊翻頁（正面為英文，背面顯示翻譯、詞性、字根/字源）。
+- 管理頁可新增/編輯單字，並有「自動填入」按鈕會呼叫線上 API 取得翻譯/詞性/來源
+- 單字會儲存在 `localStorage`，重新整理仍保留。
+
+如何使用
+
+1. 在本地開啟 `index.html`（或啟動簡易靜態 server）：
+
+```bash
+# 使用 python 內建 server
+python3 -m http.server 8000
+# 然後瀏覽 http://localhost:8000
+```
+
+2. 點擊右上角 `管理單字`，輸入英文後可按 `自動填入`（會呼叫 dictionaryapi.dev 與 libretranslate.de）。
+3. 按 `儲存` 可將單字加入清單，之後在卡片區可翻閱與切換單字。
+
+注意事項
+
+- 自動填入依賴公開 API，可能有 CORS 或流量限制；若失敗可以手動填寫。
+- 若需更穩定的翻譯服務，建議替換為付費或自架的翻譯 API。
+
+檔案
+
+- `index.html`：主頁
+- `style.css`：樣式
+- `app.js`：行為與儲存邏輯
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

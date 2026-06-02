@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>背單字卡</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>背單字卡</h1>
+      <button id="toggle-manage">管理單字</button>
+    </header>
+
+    <main>
+      <section class="card-area">
+        <div class="controls">
+          <button id="prev">◀</button>
+          <button id="next">▶</button>
+        </div>
+
+        <div class="card" id="card">
+          <div class="card-inner" id="cardInner">
+            <div class="card-face card-front" id="cardFront">
+              <div class="word" id="wordText">—</div>
+            </div>
+            <div class="card-face card-back" id="cardBack">
+              <div class="field"><strong>翻譯：</strong><span id="translation">—</span></div>
+              <div class="field"><strong>詞性：</strong><span id="pos">—</span></div>
+              <div class="field"><strong>字根/來源：</strong><span id="etym">—</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="manage" id="managePanel">
+        <h2>管理單字</h2>
+        <form id="wordForm">
+          <label>英文單字
+            <input type="text" id="inputWord" required />
+          </label>
+          <label>翻譯
+            <input type="text" id="inputTranslation" />
+          </label>
+          <label>詞性
+            <input type="text" id="inputPos" />
+          </label>
+          <label>字根/字源/分析
+            <textarea id="inputEtym" rows="3"></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="button" id="autoFill">自動填入</button>
+            <button type="submit" id="saveWord">儲存</button>
+          </div>
+        </form>
+
+        <h3>單字清單</h3>
+        <ul id="wordList"></ul>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

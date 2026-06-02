@@ -1,0 +1,38 @@
+:root{
+  --bg:#f4f6f8;
+  --card:#fff;
+  --accent:#2b7a78;
+  --muted:#666;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans',Helvetica,Arial}
+body{background:var(--bg);color:#222;display:flex;flex-direction:column}
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:linear-gradient(90deg,#fff, #f8fafb);box-shadow:0 1px 0 rgba(0,0,0,0.05)}
+header h1{margin:0;font-size:18px}
+header button{padding:6px 10px;border-radius:6px;border:1px solid #ddd;background:#fff;cursor:pointer}
+
+main{flex:1;display:flex;gap:24px;padding:24px}
+.card-area{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.controls{display:flex;gap:8px;margin-bottom:16px}
+.controls button{padding:8px 12px;border-radius:6px;border:1px solid #ccc;background:#fff}
+
+.card{width:360px;height:220px;perspective:1200px}
+.card-inner{width:100%;height:100%;position:relative;transition:transform 0.7s;transform-style:preserve-3d;cursor:pointer}
+.card.is-flipped .card-inner{transform:rotateY(180deg)}
+.card-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;background:var(--card);box-shadow:0 10px 30px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;padding:20px}
+.card-front{font-size:36px;font-weight:700}
+.card-back{transform:rotateY(180deg);flex-direction:column;align-items:flex-start}
+.field{margin-bottom:10px;color:var(--muted)}
+
+.manage{width:340px;background:#fff;border-radius:10px;padding:16px;box-shadow:0 6px 24px rgba(0,0,0,0.06);max-height:80vh;overflow:auto}
+.manage h2{margin-top:0}
+.manage label{display:block;margin-bottom:8px;font-size:14px}
+.manage input,.manage textarea{width:100%;padding:6px 8px;border:1px solid #e3e8ee;border-radius:6px;margin-top:4px}
+.form-actions{display:flex;gap:8px;margin-top:8px}
+.form-actions button{flex:1;padding:8px;border-radius:8px;border:1px solid #ddd;background:#f7f9fa;cursor:pointer}
+.form-actions button#saveWord{background:var(--accent);color:#fff;border:none}
+
+#wordList{list-style:none;padding:0;margin:12px 0}
+#wordList li{padding:6px 8px;border-radius:6px;border:1px solid #f0f3f5;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+
+@media(max-width:900px){main{flex-direction:column;align-items:center} .manage{width:100%}}
